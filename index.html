@@ -34,6 +34,30 @@
 
   <title>madio_express</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- Add notification permission request script -->
+  <script>
+    // Request notification permission
+    async function requestNotificationPermission() {
+      if ('Notification' in window) {
+        const permission = await Notification.requestPermission();
+        return permission;
+      }
+      return 'denied';
+    }
+
+    // Check notification permission status
+    function getNotificationPermission() {
+      if ('Notification' in window) {
+        return Notification.permission;
+      }
+      return 'denied';
+    }
+
+    // Make functions globally available
+    window.requestNotificationPermission = requestNotificationPermission;
+    window.getNotificationPermission = getNotificationPermission;
+  </script>
 </head>
 
 <body>
