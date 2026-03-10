@@ -1,11 +1,11 @@
 {
-    "name": "madio_express",
-    "short_name": "madio_express",
+    "name": "Madio Express",
+    "short_name": "Madio Express",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#0F091A",
+    "theme_color": "#7C5CBF",
+    "description": "Crea tu tienda virtual y empieza a vender en minutos. Gestiona productos, pedidos, inventario y clientes.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

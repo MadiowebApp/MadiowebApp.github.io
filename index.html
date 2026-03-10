@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
   <!--
@@ -18,22 +18,124 @@
   <base href="/">
 
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Create Your Virtual Store with Madio-express.">
+  <meta name="description" content="Crea tu tienda virtual y empieza a vender en minutos. Madio Express te ofrece herramientas para gestionar productos, pedidos, inventario y clientes desde un solo lugar.">
   <meta name="google-signin-client_id"
     content="448161361563-r5jd1nj4cs54p472etc420ffpagbt1a5.apps.googleusercontent.com">
 
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://madio-express.com/">
+  <meta property="og:title" content="Madio Express - Crea tu Tienda Virtual">
+  <meta property="og:description" content="Crea tu tienda virtual y empieza a vender en minutos. Gestiona productos, pedidos, inventario y clientes desde un solo lugar.">
+  <meta property="og:image" content="https://madio-express.com/icons/Icon-512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:site_name" content="Madio Express">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://madio-express.com/">
+  <meta name="twitter:title" content="Madio Express - Crea tu Tienda Virtual">
+  <meta name="twitter:description" content="Crea tu tienda virtual y empieza a vender en minutos. Gestiona productos, pedidos, inventario y clientes desde un solo lugar.">
+  <meta name="twitter:image" content="https://madio-express.com/icons/Icon-512.png">
+
+  <!-- Additional SEO -->
+  <meta name="keywords" content="tienda virtual, e-commerce, vender online, gestión de inventario, pedidos, Madio Express, crear tienda">
+  <meta name="author" content="Madio Express">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#7C5CBF">
+
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="madio_express">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Madio Express">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
 
-  <title>madio_express</title>
+  <title>Madio Express - Crea tu Tienda Virtual</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- Loading screen styles -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #0F091A;
+      color: #FAFAFC;
+    }
+
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0F091A 0%, #1a1035 50%, #0F091A 100%);
+      z-index: 9999;
+      transition: opacity 0.4s ease-out;
+    }
+
+    #loading-screen.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #loading-screen .logo-container {
+      width: 120px;
+      height: 120px;
+      border-radius: 28px;
+      overflow: hidden;
+      margin-bottom: 32px;
+      box-shadow: 0 8px 32px rgba(124, 92, 191, 0.3);
+    }
+
+    #loading-screen .logo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #loading-screen h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      background: linear-gradient(135deg, #FAFAFC, #D4849A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    #loading-screen p {
+      font-size: 15px;
+      color: #8A8A9E;
+      margin: 0 0 48px 0;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(124, 92, 191, 0.2);
+      border-top-color: #7C5CBF;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Static content for SEO - hidden when app loads */
+    #seo-content {
+      display: none;
+    }
+  </style>
 
   <!-- Add notification permission request script -->
   <script>
@@ -61,19 +163,39 @@
 </head>
 
 <body>
+  <!-- Loading screen visible while Flutter initializes -->
+  <div id="loading-screen">
+    <div class="logo-container">
+      <img src="icons/Icon-512.png" alt="Madio Express">
+    </div>
+    <h1>Madio Express</h1>
+    <p>Crea tu tienda virtual</p>
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Static content for SEO crawlers -->
+  <div id="seo-content">
+    <h1>Madio Express - Crea tu Tienda Virtual</h1>
+    <p>Madio Express es una plataforma de e-commerce que te permite crear tu propia tienda virtual y empezar a vender en minutos.</p>
+    <h2>Funcionalidades</h2>
+    <ul>
+      <li>Gesti&oacute;n de productos con categor&iacute;as, precios y variantes</li>
+      <li>Procesamiento de pedidos con seguimiento en tiempo real</li>
+      <li>Control de inventario y bodegas</li>
+      <li>Gesti&oacute;n de clientes y proveedores</li>
+      <li>Integraci&oacute;n con WhatsApp para notificaciones</li>
+      <li>M&uacute;ltiples m&eacute;todos de pago</li>
+      <li>C&oacute;digos de descuento y herramientas financieras</li>
+    </ul>
+    <p>Empieza a vender hoy con Madio Express. Visita <a href="https://madio-express.com">madio-express.com</a></p>
+  </div>
+
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="notification-permission.js"></script>
-  <script src="flutter_bootstrap.js" async></script>
-
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="notification-permission.js"></script>
 
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  <script>
+    // Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyAR2vtl3GLEqRn4TZIt0hohStATwEZdYm8",
       authDomain: "madio-express.firebaseapp.com",
@@ -85,8 +207,20 @@
     };
 
     // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script src="flutter_bootstrap.js" async></script>
+
+  <script>
+    // Remove loading screen once Flutter is ready
+    window.addEventListener('flutter-first-frame', function () {
+      var loader = document.getElementById('loading-screen');
+      if (loader) {
+        loader.classList.add('fade-out');
+        setTimeout(function () { loader.remove(); }, 400);
+      }
+    });
   </script>
 </body>
 
