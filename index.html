@@ -18,6 +18,9 @@
   <base href="/">
 
   <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="Crea tu tienda virtual y empieza a vender en minutos. Madio Express te ofrece herramientas para gestionar productos, pedidos, inventario y clientes desde un solo lugar.">
@@ -187,6 +190,26 @@
 
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script>
+    // Force service worker to update on every visit
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (var registration of registrations) {
+          registration.update();
+        }
+      });
+
+      // When a new service worker takes over, reload to get fresh content
+      var refreshing = false;
+      navigator.serviceWorker.addEventListener('controllerchange', function() {
+        if (!refreshing) {
+          refreshing = true;
+          window.location.reload();
+        }
+      });
+    }
   </script>
 
   <script src="flutter_bootstrap.js" async></script>
