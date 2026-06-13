@@ -135,30 +135,6 @@
     }
 
   </style>
-
-  <!-- Add notification permission request script -->
-  <script>
-    // Request notification permission
-    async function requestNotificationPermission() {
-      if ('Notification' in window) {
-        const permission = await Notification.requestPermission();
-        return permission;
-      }
-      return 'denied';
-    }
-
-    // Check notification permission status
-    function getNotificationPermission() {
-      if ('Notification' in window) {
-        return Notification.permission;
-      }
-      return 'denied';
-    }
-
-    // Make functions globally available
-    window.requestNotificationPermission = requestNotificationPermission;
-    window.getNotificationPermission = getNotificationPermission;
-  </script>
 </head>
 
 <body>
@@ -174,7 +150,6 @@
 
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script src="notification-permission.js"></script>
 
   <script>
     // Firebase configuration
