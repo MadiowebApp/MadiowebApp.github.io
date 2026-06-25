@@ -1,6 +1,6 @@
 {
   "_comment": "Forced/recommended update manifest read by the madio_express app at startup. Bump minBuild to force clients below it to update; bump latestBuild for a soft 'recommended' prompt. minBuild/latestBuild are Android versionCode / build numbers (pubspec '+N'). Edited standalone here; survives web deploys via the /XF exclusion in tool/deploy_web.ps1.",
-  "android": { "minBuild": 3, "latestBuild": 3 },
+  "android": { "minBuild": 4, "latestBuild": 4 },
   "ios": { "minBuild": 1, "latestBuild": 1 },
   "web": { "minBuild": 1, "latestBuild": 1 },
   "storeUrl": "market://details?id=com.madio.express"
