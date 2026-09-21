@@ -48864,11 +48864,11 @@ wA(a){var s=a.d,r=A.dgJ(a,s==null?B.cL:s)
 return a.Q?new A.ri(r.b,r.a):r},
 dgJ(a,b){var s,r=a.y
 if(r==null)return A.di6(b)
-s=B.e.dD(r.gaFX()*a.gyW()*10)/10
+s=B.e.dD(r.aFX(a.gyW())*10)/10
 return b===B.dh||b===B.dA?new A.ri(s,0.9):new A.ri(0.9,s)},
 di6(a){switch(a.a){case 2:case 3:return new A.ri(2.4,0.9)
 case 0:case 4:return new A.ri(0.9,4)
-case 1:return new A.ri(1.3,2.6)}},
+case 1:return new A.ri(0.9,2.6)}},
 cWw(a){return B.b.dc(a.x,new A.cC_())?2.2:0},
 aeg(a){var s,r,q,p,o,n,m,l=a.x,k=A.a2(l).j("ax<1>"),j=A.P(new A.ax(l,new A.cDF(),k),k.j("G.E"))
 k=j.length
@@ -158532,9 +158532,9 @@ case 4:return 1.5
 case 2:case 3:return 2}}}
 A.m5.prototype={
 K(){return"CounterFootprint."+this.b},
-gaFX(){switch(this.a){case 0:return 2
-case 1:return 1
-case 2:return 0.5}}}
+aFX(a){switch(this.a){case 0:return 4
+case 1:return a
+case 2:return a/2}}}
 A.ja.prototype={
 cX(){var s=this
 return A.H(["x",s.a,"y",s.b,"w",s.c,"d",s.d,"rotation",s.e],t.N,t.z)},
@@ -197431,7 +197431,7 @@ A.aEA.prototype={
 t(a){var s=this,r=null,q=s.f,p=q?B.zL:B.f,o=A.h(10),n=q?B.e3:B.P,m=q?1.8:1.4,l=A.h(10),k=s.d,j=s.e,i=A.aq(A.du(r,r,!1,r,new A.aEz(s.c,k,j,q,r),B.az),54,1/0)
 return A.bJ(!1,B.F,!0,r,A.bu(!1,l,!0,new A.D(B.am7,A.u(A.a([i,B.ac,A.c(j.d,r,r,r,r,r,A.y().$3$color$fontSize$fontWeight(B.r,12.5,q?B.aL:B.u),r,r,r),A.c(""+k+" pisos",r,r,r,r,r,A.y().$3$color$fontSize$height(B.B,11.5,1.35),r,r,r)],t.p),B.j,r,B.c,B.z),r),r,!0,r,r,r,r,r,r,r,r,r,r,s.r,r,r,r,r,r,r,r),B.i,p,0,r,r,new A.as(o,new A.aL(n,m,B.o,-1)),r,r,B.ak)}}
 A.aEz.prototype={
-aE(a4,a5){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d=this,c=d.c,b=c*0.5,a=d.d.gaFX()*b,a0=d.b,a1=a0===B.dh||a0===B.dA,a2=a1?0.9:a,a3=a1?a:0.9
+aE(a4,a5){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d=this,c=d.c,b=c*0.5,a=d.d.aFX(b),a0=d.b,a1=a0===B.dh||a0===B.dA,a2=a1?0.9:a,a3=a1?a:0.9
 a0=a5.a
 s=a5.b
 r=B.b.hq(A.a([a0/4.243524478543749,s/4.45],t.n),new A.cpZ())
